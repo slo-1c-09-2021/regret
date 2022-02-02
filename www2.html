@@ -1,0 +1,146 @@
+<html lang="pl"><head>
+	<meta charset="utf-8">
+	<title>Projekt odliczanie </title>
+	
+	<script type="text/javascript">
+
+	// function odliczanie()
+	// {
+	// 	var dzisiaj = new Date();//obiekt Date 
+		
+	// 	var dzien = dzisiaj.getDate();
+	// 	var miesiac = dzisiaj.getMonth()+1;
+	// 	var rok = dzisiaj.getFullYear();
+	// 	var milisekundy = dzisiaj.getTime();
+		
+	// 	var end = new Date("06/25/2021");//data wydarzenia
+	// 	var endDzien = end.getDate();
+	// 	var endMiesiac = end.getMonth()+1;
+	// 	var endRok = end.getFullYear();
+	// 	var milisekundy2 = end.getTime();
+		
+	// 	var pozostalo = milisekundy2 - milisekundy; //obliczamy ile milisekund pozostało do wydarzenia
+	// 	var dni = Math.floor(pozostalo/86400000); //obliczamy liczbe dni do wydarzenia
+		
+	
+		
+	// 	document.getElementById("aktualnaData").innerHTML = "Aktualna data: "+dzien+"/"+miesiac+"/"+rok; 
+	// 	document.getElementById("dataWydarzenia").innerHTML = "Data wydarzenia do którego obliczamy liczbę dni: "+endDzien+"/"+endMiesiac+"/"+endRok;
+	// 	document.getElementById("dniDoWydarzenia").innerHTML ="Do wydarzenia pozostało: "+ dni;
+		 
+	// }
+
+	function inputDate()
+	{
+		var dzisiaj = new Date();
+		
+		var dzienTeraz = dzisiaj.getDate();
+		var miesiacTeraz = dzisiaj.getMonth()+1;
+		var rokTeraz = dzisiaj.getFullYear();
+		var milisekundyTeraz = dzisiaj.getTime();
+
+		var data = window.prompt("Podaj datę (DD/MM/YYYY): ");
+		data = data.toString();
+		var dzien = data[0]+data[1];
+		var miesiac = data[3]+data[4];
+		console.log(miesiac)
+		var rok = data[6]+data[7]+data[8]+data[9];
+		var milisekund = Number(dzien) * 86400000 + Number(rok) * 365*86400000;
+		var dzienLuty;
+		if((rok%4==0)&&(rok%100!=0)) dzienLuty = 29;
+		else dzienLuty = 28;
+		const miesiac30 = 2592000000;
+		const miesiac31 = 2678400000;
+		const miesiacLuty = dzienLuty * 86400000;
+		switch(miesiac)
+		{
+			case "01":
+				milisekund+=miesiac31;
+				break;
+			case "02":
+				milisekund+=miesiac31+miesiacLuty;
+				break;
+			case "03":
+				milisekund+=2*miesiac31+miesiacLuty;
+				break;
+			case "04":
+				milisekund+=2*miesiac31+1*miesiac30+miesiacLuty;
+				break;
+			case "05":
+				milisekund+=3*miesiac31+1*miesiac30+miesiacLuty;
+				break;
+			case "06":
+				milisekund+=3*miesiac31+2*miesiac30+miesiacLuty;
+				break;
+			case "07":
+				milisekund+=4*miesiac31+2*miesiac30+miesiacLuty;
+				break;
+			case "08":
+				milisekund+=5*miesiac31+2*miesiac30+miesiacLuty;
+				break;
+			case "09":
+				milisekund+=5*miesiac31+3*miesiac30+miesiacLuty;
+				break;
+			case "10":
+				milisekund+=6*miesiac31+3*miesiac30+miesiacLuty;
+				break;
+			case "11":
+				milisekund+=6*miesiac31+4*miesiac30+miesiacLuty;
+				break;
+			case "12":
+				milisekund+=7*miesiac31+4*miesiac30+miesiacLuty;
+				break;
+		}
+
+		var iloscDni = Math.floor((milisekund-milisekundyTeraz)/86400000)-719065;
+
+		document.getElementById("aktualnaData").innerHTML = "Aktualna data: 0" +dzienTeraz+"/0"+miesiacTeraz+"/"+rokTeraz; 
+		document.getElementById("dataWydarzenia").innerHTML = "Data wydarzenia do którego obliczamy liczbę dni: "+dzien+"/"+miesiac+"/"+rok;
+		document.getElementById("dniDoWydarzenia").innerHTML ="Do wydarzenia pozostało "+ iloscDni + " dni.";
+	}
+
+	// function getDays()
+	// {
+	// 	var dzisiaj = new Date();
+	// 	var dzisiajString = dzisiaj.toString();
+
+	// 	var data = window.prompt("Podaj datę (DD/MM/YYYY): ");
+	// 	data = data.toString();
+		
+	// 	var rokDzisiaj = Number(dzisiajString[6]+dzisiajString[7]+dzisiajString[8]+dzisiajString[9]);
+	// 	var rokData = Number(data[6]+data[7]+data[8]+data[9]);
+	// 	var lat = rokData-rokDzisiaj;
+
+		
+	// }
+	
+	</script>
+
+	<link rel="stylesheet" href="style.css" type="text/css">
+	
+<style>@media print {#ghostery-tracker-tally {display:none !important}}</style></head>
+<body>
+
+<div id="container">
+<div id="topBar">
+Zadanie: Utwórz i sformatuj stronę odliczjącą liczbę dni do wydarzenia np. „Ile dni pozostało do wakacji.”</div>
+	
+	<div id="aktualnaData">Aktualna data: 2/2/2022</div> 
+
+	<br>
+	
+	<div id="dataWydarzenia">Data wydarzenia do którego obliczamy liczbę dni: 25/6/2021</div>
+<br>
+<br>	
+	
+	<div id="dniDoWydarzenia">Do wydarzenia pozostało: -23</div> 
+	
+	<script type="text/javascript">
+	inputDate();
+	</script>
+<div id="footer">
+kod dziala w miare dobrze (czasami) nie ponosze odpowiedzialnosci za swoje czyny
+</div>
+</div>
+
+</body></html>

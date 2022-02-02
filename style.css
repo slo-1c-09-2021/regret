@@ -1,0 +1,74 @@
+body
+{
+background-color: 	#d6d57f;
+font-family: Verdana;
+font-size: 24px;
+color: white;
+}
+#container
+{
+	margin-top: 100px;
+	padding-top: 50px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom:50px;
+	background-color: #b9b6a4;
+	margin: auto;
+	margin-top: 150px;
+    width: 1000px;
+	border-style: solid;
+	border-width: 20px;
+	border-color: rgb(98, 117, 86);
+}
+#aktualnaData
+{
+	  text-align: center;
+    border: 3px solid #808080;
+}
+#dniDoWydarzenia
+{
+	  text-align: center;
+    border: 3px solid #808080;
+}
+#doWydarzenia
+{
+	  text-align: center;
+    border: 3px solid #808080;
+}
+
+#dataWydarzenia
+{
+	  text-align: center;
+    border: 3px solid #808080;
+}
+
+#description
+{
+	text-align: center;
+	border: 3px solid #808080;
+}
+
+#footer
+{
+	color: #f00f0f;
+	margin-top: 50px;
+	padding: 10px;
+	font-size: 12px;
+	text-align: center;
+    border: 3px solid blue;
+	letter-spacing: 3px;
+	text-shadow: 1px;
+	font-family: cursive;
+	font-size: 20px;
+}
+#topBar
+{
+	
+	color: #808080;
+	padding: 10px;
+	font-size: 18px;
+	text-align: center;
+    border: 3px solid blue;
+	letter-spacing: 3px;
+	margin-bottom: 50px;
+}

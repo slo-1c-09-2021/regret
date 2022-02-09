@@ -93,6 +93,7 @@
 		}
 
 		var iloscDni = Math.floor((milisekund-milisekundyTeraz)/86400000)-719065;
+		if(("0"+miesiacTeraz)!=(data[3]+data[4])) iloscDni-=3;
 
 		document.getElementById("aktualnaData").innerHTML = "Aktualna data: 0" +dzienTeraz+"/0"+miesiacTeraz+"/"+rokTeraz; 
 		document.getElementById("dataWydarzenia").innerHTML = "Data wydarzenia do którego obliczamy liczbę dni: "+dzien+"/"+miesiac+"/"+rok;
